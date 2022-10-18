@@ -29,7 +29,9 @@ class PostsController {
       content
     );
 
-    res.status(201).json({ data: createPostData });
+    res.status(201).json({
+      message: "게시글 작성에 성공하였습니다.",
+    });
   };
 
   updatePost = async (req, res, next) => {
@@ -43,7 +45,9 @@ class PostsController {
       content
     );
 
-    res.status(200).json({ data: updatePost });
+    res.status(200).json({
+      message: "게시글을 수정하였습니다.",
+    });
   };
 
   deletePost = async (req, res, next) => {
@@ -52,7 +56,9 @@ class PostsController {
 
     const deletePost = await this.postService.deletePost(postId, password);
 
-    res.status(200).json({ data: deletePost });
+    res.status(200).json({
+      message: "게시글을 삭제하였습니다.",
+    });
   };
 }
 
